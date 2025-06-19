@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Global Styles */
+body {
+    @apply font-sans text-gray-800 bg-gray-100;
+}
+
+a {
+    @apply text-blue-600 hover:underline;
+}
+
+button {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+}
+
+/* Responsive Container */
+.container {
+    @apply px-4 mx-auto;
+    max-width: 1140px;
+}
