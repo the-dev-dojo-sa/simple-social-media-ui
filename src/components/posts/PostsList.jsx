@@ -1,7 +1,5 @@
 import React from "react";
 import PostCard from "./PostCard";
-import LoadingSkeleton from "../shared/LoadingSkeleton";
-import ErrorMessage from "../ui/ErrorMessage";
 
 export default function PostsList({ posts }) {
     if (!posts || posts.length === 0) {

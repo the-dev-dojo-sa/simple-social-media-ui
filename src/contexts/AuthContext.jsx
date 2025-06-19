@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
         try {
             setLoading(true);
             setError(null);
-            const data = await loginService(credentials);
+            await loginService(credentials);
             
             // Get user data
             const userData = await getCurrentUser();
@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }) => {
             console.log('Registration successful:', registeredUser);
             
             // Then automatically log them in to get the access token
-            const loginData = await loginService({
+            await loginService({
                 username: userData.username,
                 password: userData.password
             });

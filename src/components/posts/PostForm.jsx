@@ -11,7 +11,7 @@ export default function PostForm() {
 
         setLoading(true);
         try {
-            const newPost = await createPost({
+            await createPost({
                 content,
                 image_url: "https://placehold.co/600x400?text=New+Post",
             });
