@@ -1,9 +1,10 @@
-const API_URL = "https://simple-social-media-api.nachert.art";
+const API_URL = "https://simple-social-media-api.dev.nachert.art";
 
 // Register a new user
 export const register = async (userData) => {
     const res = await fetch(`${API_URL}/register/`, {
         method: "POST",
+        mode: "cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
     });
@@ -24,6 +25,7 @@ export const login = async (credentials) => {
     
     const res = await fetch(`${API_URL}/login/`, {
         method: "POST",
+        mode: "cors",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: formData,
     });
@@ -50,6 +52,7 @@ export const getCurrentUser = async () => {
     }
     
     const res = await fetch(`${API_URL}/users/me/`, {
+        mode: "cors",
         headers: {
             "Authorization": `Bearer ${token}`,
         },
