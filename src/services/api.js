@@ -1,4 +1,4 @@
-const API_URL = "https://simple-social-media-api.nachert.art";
+const API_URL = "https://simple-social-media-api.dev.nachert.art";
 
 // Helper function to get auth headers
 const getAuthHeaders = () => {
@@ -13,6 +13,7 @@ export const getPosts = async () => {
     };
     
     const res = await fetch(`${API_URL}/posts/`, {
+        mode: "cors",
         headers
     });
     
@@ -39,6 +40,7 @@ export const createPost = async (postData) => {
     
     const res = await fetch(`${API_URL}/posts/`, {
         method: "POST",
+        mode: "cors",
         headers,
         body: JSON.stringify(postData),
     });
@@ -62,6 +64,7 @@ export const createPost = async (postData) => {
 export const authenticatedRequest = async (url, options = {}) => {
     const res = await fetch(`${API_URL}${url}`, {
         ...options,
+        mode: "cors",
         headers: {
             ...getAuthHeaders(),
             "Content-Type": "application/json",
